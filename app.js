@@ -10,11 +10,18 @@ let hak=5;
 
 console.log(random);
 btn.addEventListener('click',(e)=>{
-    if(!tahmin.value){
-             alert("Lütfen 0-100 arası sayı giriniz: ");
+    if(tahmin.value<0){
+        alert("Girdiğiniz sayı pozitif sayı olmalı ");
+             tahmin.value="";
+    }
+    else if(!tahmin.value){
+        
+        alert("Lütfen 0-100 arası sayı giriniz: ");
+        tahmin.value="";
     }
     else if(tahmin.value>100){
         alert("Girdiğiniz sayı 100 den büyük olmamalı ");
+        tahmin.value="";
     }
       
        else if(tahmin.value.toString()===random.toString()){
@@ -40,12 +47,12 @@ btn.addEventListener('click',(e)=>{
            
             if(tahmin.value>random){
                 // alert("Tahmin edilen sayı , rastgele sayıdan küçüktür")
-                 sonuc.innerHTML=`<p>${tahmin.value} - ${tahmin.value} arasında bir sayı giriniz</p>`;
+                 sonuc.innerHTML=`<p>0 - ${tahmin.value} arasında bir sayı giriniz</p>`;
                 tahmin.value="";
  
              }
              else if(tahmin.value<random){
-                 sonuc.innerHTML=`<p> ${tahmin.value} - 50 arasında bir sayı giriniz</p>`;
+                 sonuc.innerHTML=`<p>${tahmin.value} - 50 arasında bir sayı giriniz</p>`;
                  tahmin.value="";
              }
         }
